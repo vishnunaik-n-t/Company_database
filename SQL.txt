@@ -166,3 +166,25 @@ create table trigger_test(
 message varchar(40)
 );
 
+🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐🧐
+
+select customer_id, sum(order_amount) as total_amount from orders
+group by customer_id
+having total_amount>5000;
+
+
+select category, sum(sale_amount) as total_amount, count(sale_id) as sale_transaction
+from sales 
+group by category
+having total_amount>10000 and sale_transaction>5;
+
+select e.name, d.name from employee e, department d where e.emp_id=d.emp_id
+
+
+select e.name, d.name from employee e join department d on e.emp_id=d.emp_id;
+
+
+select name, salary, avg_salary from (
+select avg(salary) as avg_salary from employee
+) as avg_sal, employee;
+
